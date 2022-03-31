@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdk-test-pwa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/orientation.css">
+    <link rel="icon" href="icon/favicon.ico">
+    <style>
+        *:focus {
+            border: 1px solid #fb9d3a;
+        }
+
+        li {
+            font-size: larger;
+            line-height: 1.5em;
+        }
+
+        button {
+            font-size: large;
+            color: white;
+            background-color: #555555;
+        }
+    </style>
+
+</head>
+
+<!-- Uncomment below to use loader to fetch sdk -->
+<!-- <script src="sdk-loader.js"></script> -->
+<script>
+    function myFunction() {
+        console.log("Click");
+        var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        var x = "Width: " + w + "<br>Height: " + h;
+        //return x;
+        document.getElementById("size").innerHTML = "Width: " + w + "<br>Height: " + h;
+    }
+        //document.getElementById("demo").innerHTML = myFunction();
+</script>
+
+<body>
+    <h3>Sample image</h3>
+    <p id=portrait>Portrait</p>
+    <p id=landscape>Landscape</p>
+    <button class="items" onclick="myFunction()">Get screen size</button>
+    <div style="max-width:90%;">
+        <p id="size"></p>
+
+        <ul id="items">
+            <li><a href="index.html" class="items" data-cy="index">index</a></li>
+            <li><a href="./img/216x36.png" class="items" data-cy="216x36">216x36</a></li>
+            <li><a href="./img/216x54.png" class="items" data-cy="216x54">216x54</a></li>
+            <li><a href="./img/240x264.png" class="items" data-cy="240x264">240x264</a></li>
+            <li><a href="./img/480x800.png" class="items" data-cy="480x800">480x800</a></li>
+            <li><a href="./img/480x854.png" class="items" data-cy="480x854">480x854</a></li>
+            <li><a href="./img/480x960.png" class="items" data-cy="480x854">480x960</a></li>
+            <li><a href="./img/720x1280.png" class="items" data-cy="480x854">720x1280</a></li>
+        </ul>
+
+    </div>
+    <br><br>
+
+    <!-- HTMLElement must set inline min/max height and width styles in pixels,
+		style's "display" property will be set to "block" once ad.show() is called
+		display:none is suggested to be present, in case something goes wrong
+	 -->
+
+
+    <div class="items" id='ad-holder2' style="max-width:220px;max-height:36px;display:none;margin:auto"></div>
+
+    <br><br>
+    <!-- 
+	<div id='ad3' style="max-width:250px;max-height:80px;display:none;margin:auto"></div>	
+
+	<br><br>
+
+	<div id='ad4' style="max-width:250px;max-height:150px;display:none;margin:auto"></div>
+	-->
+</body>
+
+</html>

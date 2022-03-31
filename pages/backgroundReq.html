@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdk-test-pwa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="theme-color" content="transparent">
+    <link rel="stylesheet" type="text/css" href="../css/orientation.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link rel="icon" href="icon/favicon.ico">
+
+    <style>
+        #displayList {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding: 5px;
+            background-color: rgb(207, 250, 246);
+            border: 2px solid rgb(111, 196, 189);
+        }
+
+        .display {
+            width: auto;
+            font-size: small;
+        }
+
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            text-decoration: unset;
+        }
+    </style>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/setSDKversion.js"></script>
+
+
+</head>
+
+<body>
+    <div class="title">Background Request
+        <div class="orientation">
+            <div id=portrait>Portrait</div>
+            <div id=landscape>Landscape</div>
+        </div>
+    </div>
+
+    <div id="div1" class="panel"> <br></div>
+    <a href="/index.html">
+        <button class="back items">
+            MENU
+        </button>
+    </a>
+
+
+    <div class="pageContent">
+        <!-- HTMLElement must set inline min/max height and width styles in pixels,
+		style's "display" property will be set to "block" once ad.show() is called
+		display:none is suggested to be present, in case something goes wrong
+     -->
+
+        <!-- <br><br> -->
+        <div id="presetSize">
+            <hr class="solid">
+            <span id="hiddenAdStatus" style="display:none;"></span>
+            <button class="items" id="clickDisplay">Toggle Display</button>
+            <br><br>
+            <button class="itemsAdContainer items" style="display: none;">
+                <div id='responsive-ad-conteiner'
+                    style=" width:220px;height:100px;margin:auto;border: 1px solid dimgray;display:none"></div>
+            </button>
+            <hr class="solid">
+
+            <!-- For Display percentage -->
+            <p>ad container</p>
+            <button class="items" id='getNewAd' style=" background-color: lightpink;margin-top: 10px;">Get New
+                Ad</button>
+
+            <div id="displayListUp" style="display:none">
+                <div id='forScroll' style="width:240px;height:100px;display:none;"></div>
+                <button class="Items" id='goList'>List</button>
+                <button id="dT1" class="display items"
+                    style="background-color:white;color: #6f24b5;border:#6f24b5 1px solid;">TOP1%</button>
+                <button id="dT10" class="display items"
+                    style="background-color:white;color: #6f24b5;border:#6f24b5 1px solid;">TOP10%</button>
+                <br>
+                <br>
+                <button class="itemsAdContainer items">
+                    <div id='ad-holder2'
+                        style="width:480px;height:840px;display:none;margin:auto;border: 1px solid dimgray;">
+                    </div>
+                </button>
+                <br>
+            </div>
+            <div id="displayList" style="display:none">
+                <button id="d0" class="display items">0%</button>
+                <button id="dT1" class="display items"
+                    style="background-color:white;color: #6f24b5;border:#6f24b5 1px solid;">TOP1%</button>
+                <button id="d1" class="display items">1%</button>
+                <button id="d5" class="display items">5%</button>
+                <button id="d8" class="display items">8%</button>
+                <button id="d9" class="display items">9%</button>
+                <button id="dT10" class="display items"
+                    style="background-color:white;color: #6f24b5;border:#6f24b5 1px solid;">TOP10%</button>
+                <button id="d10" class="display items">10%</button>
+                <button id="d50" class="display items">50%</button>
+                <button id=" d70" class="display items">70%</button>
+                <button id="d80" class="display items">80%</button>
+                <button id="d90" class="display items">90%</button>
+                <button id="d98" class="display items">98%</button>
+                <button id="d100" class="display items">100%</button>
+                <br>
+            </div>
+
+            <hr class="solid">
+            <div id="overlay" style="display: none;">
+                <a href="javascript:void(0)" class="items closebtn">&times;</a>
+            </div>
+
+            <div style="padding:20px">
+                <button class="items" style="background-color: lightpink;"
+                    onclick=" window.open('/backgroundReq2.html')">Open
+                    Webview</button>
+                <a href="/pages/backgroundReq2.html"><button class="items" style="background-color: lightpink;">Go
+                        leave
+                        page</button>
+                </a>
+                <button class="items" style="background-color: lightslategray;" id="overlayBtn">Turn on
+                    overlay
+                    effect</button>
+            </div>
+
+            <div style="width:240px;height:1000px"></div>
+            <br></br>
+            <!-- 
+	<div id='ad3' style="max-width:250px;max-height:80px;display:none;margin:auto"></div>	
+
+	<br><br>
+
+	<div id='ad4' style="max-width:250px;max-height:150px;display:none;margin:auto"></div>
+    -->
+        </div>
+        <div>
+        </div>
+</body>
+
+</html>

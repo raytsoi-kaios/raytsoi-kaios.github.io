@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdk-test-pwa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="theme-color" content="#FFFF00">
+    <link rel="stylesheet" type="text/css" href="../css/orientation.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link rel="icon" href="icon/favicon.ico">
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="testTool.js"></script>
+
+</head>
+
+<body>
+    <div class="title">Test Tool
+        <div class="orientation">
+            <div id=portrait>Portrait</div>
+            <div id=landscape>Landscape</div>
+        </div>
+    </div>
+    <div class="panel">
+        <p>Load sdk.js in "KaiOS/ads-sdk-src/master"</p>
+        <p>Pointing to https://sdk-testing-tool.kaiads.com</p>
+    </div>
+
+    <a href="/index.html">
+        <button class="back items">
+            MENU
+        </button>
+    </a>
+
+    <div class="pageContent">
+
+        <!-- <form id="sizeForm"> -->
+
+        <label for="widthlabel">Width: </label>
+        <input class="items" type="text" name="width" value="200">
+        <br><br>
+        <label for="heightlabel">Height: </label>
+        <input class="items" type="text" name="height" value="150">
+        <!-- <label for="testModelabel" class="ttool">Test Mode: </label> -->
+        <ul class="ttool">
+            <li>
+                <div class="ttool">Test Mode: </div>
+                <select id="testMode" name="testMode" class="ttool items">
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                </select>
+            </li>
+            <li>
+                <div class="ttool">Fullscreen: </div>
+                <select id="fullscreen" name="fullscreen" class="ttool items">
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                </select>
+            </li>
+        </ul>
+        <a id="statuslink" href="#custom-ad-container" style="display: none;">
+            <span id="status"></span>
+        </a>
+        <button class="items" type="submit" id="setSize">Get Ad</button>
+        <span id="msgBox"></span>
+        <br><br>
+        <h4 id="adSize"></h4>
+
+        <!-- </form> -->
+
+        <!-- HTMLElement must set inline min/max height and width styles in pixels,
+		style's " display" property will be set to "block" once ad.show() is called display:none is suggested to be present,
+            in case something goes wrong -->
+
+        <div id='custom-ad-container' class='custom items' style="margin:10px auto;display: unset;"></div>
+    </div>
+</body>
+
+</html>

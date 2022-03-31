@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdk-test-pwa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="theme-color" content="#FFFF00">
+    <link rel="stylesheet" type="text/css" href="../css/orientation.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link rel="icon" href="icon/favicon.ico">
+    <style>
+        span {
+            color: #EF4860;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+        }
+
+        span:hover {
+            color: #61D3C9;
+            cursor: pointer;
+        }
+
+        button+button {
+            margin-top: 8px;
+        }
+    </style>
+    <script src="../js/nav.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/browser.js"></script>
+
+
+</head>
+
+<body>
+    <div class="title">Test Tool
+        <div class="orientation">
+            <div id=portrait>Portrait</div>
+            <div id=landscape>Landscape</div>
+        </div>
+    </div>
+    <div id="div1" class="panel">
+
+    </div>
+
+    <a href="/index.html">
+        <button class="back items">
+            MENU
+        </button>
+    </a>
+
+    <div class="pageContent">
+
+
+        <button class="items" id="goBtn" onclick="goOpen()" ;>GO</button>
+        <button class="items" style="background-color: lightpink;"
+            onclick=openWithMozActivity(presetUrl);>PRESET</button>
+        <hr class="solid">
+        <button class="items" style="background-color: lightpink;"
+            onclick=window.open("https://whatismyipaddress.com/");>WhatIsMyIP</button>
+        <button class="items" onclick=openWithMozActivity("http://18.139.225.26/indexTest.html");>Indiatoday -
+            TEST</button>
+        <button class="items" onclick=openWithMozActivity("http://18.139.225.26/indexStage.html");>Indiatoday -
+            STAGE</button>
+        <button class="items" onclick=openWithMozActivity("https://www.indiatoday.in/");>Indiatoday - PROD</button>
+
+    </div>
+</body>
+
+</html>

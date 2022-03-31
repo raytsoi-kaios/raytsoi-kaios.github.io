@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdk-test-pwa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="theme-color" content="#FFFF00">
+    <link rel="stylesheet" type="text/css" href="../css/orientation.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link rel="icon" href="icon/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="manifest">
+
+    </style>
+    <script src="../js/nav.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/setSDKversion.js"></script>
+
+    <script src="http://127.0.0.1/api/v1/shared/core.js"></script>
+    <script src="http://127.0.0.1/api/v1/shared/session.js"></script>
+    <script src="http://127.0.0.1/api/v1/apps/service.js"></script>
+
+
+</head>
+
+<body>
+    <div class="title">Fullscreen / Banner
+        <div class="orientation">
+            <div id=portrait>Portrait</div>
+            <div id=landscape>Landscape</div>
+        </div>
+    </div>
+
+    <div id="div1" class="panel"></div>
+    <a href="/index.html">
+        <button class="back items">
+            MENU
+        </button>
+    </a>
+
+
+    <div class="pageContent">
+        <!-- HTMLElement must set inline min/max height and width styles in pixels,
+		style's "display" property will be set to "block" once ad.show() is called
+		display:none is suggested to be present, in case something goes wrong
+     -->
+        <span id='fullscreenError'></span>
+        <div id="responsiveElement">
+            <button type="button" class="collapsible items" id="customSizeBtn">Set Custom Size</button>
+            <div class="collContent">
+                <div id="customSize">
+                    <label for="widthlabel">Width: </label>
+                    <input class="items" type="text" name="width" value="200">
+                    <br><br>
+                    <label for="heightlabel">Height: </label>
+                    <input class="items" type="text" name="height" value="150">
+
+                    <ul class="ttool">
+                        <li>
+                            <div class="ttool">Test Mode: </div>
+                            <button class="items itemsWrapSelector">
+                                <select id="testMode" name="testMode" class="ttool">
+                                    <option value="0" selected>0</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </button>
+                        </li>
+                        <li>
+                            <div class="ttool">Fullscreen: </div>
+                            <button class="items itemsWrapSelector">
+                                <select id="fullscreen" name="fullscreen" class="ttool">
+                                    <option value="0" selected>0</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </button>
+                        </li>
+                    </ul>
+                    <a class="items" id="statuslink" href="#custom-ad-container" style="display: none;">
+                        <span id="status"></span>
+                    </a>
+                    <button class="items" type="submit" id="setSize">Get Ad</button>
+                    <div id="customElement">
+                        <span id="msgBox"></span>
+                        <br><br>
+                        <h4 id="adSize"></h4>
+                        <div class="itemsAdContainer items" id="clickCustomAdContainer">
+                            <div id='custom-ad-container' class='custom' style="margin:auto;display: unset;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </form> -->
+
+            <!-- HTMLElement must set inline min/max height and width styles in pixels,
+		style's " display" property will be set to "block" once ad.show() is called display:none is suggested to be present,
+            in case something goes wrong -->
+            <br><br>
+            <div id="presetSize">
+                <span id="hiddenAdStatus" style="display:none;"></span>
+                <button class="items" id="clickDisplay">Toggle Display</button>
+                <br><br>
+                <button class="itemsAdContainer items" id="clickResponsiveAdConteiner" style="display:none">
+                    <div id='responsive-ad-conteiner'
+                        style="width:220px;height:100px;margin:auto;border: 1px solid dimgray;"></div>
+                </button>
+                <p>ad container</p>
+                <button class="itemsAdContainer items" id="clickAdHolder2">
+                    <div id='ad-holder2'
+                        style="width:480px;height:840px;display:none;margin:auto;border: 1px solid dimgray;">
+                        <p></p>
+                    </div>
+                </button>
+
+                <br></br>
+                <!-- 
+	<div id='ad3' style="max-width:250px;max-height:80px;display:none;margin:auto"></div>	
+
+	<br><br>
+
+	<div id='ad4' style="max-width:250px;max-height:150px;display:none;margin:auto"></div>
+    -->
+            </div>
+            <div>
+            </div>
+</body>
+
+</html>

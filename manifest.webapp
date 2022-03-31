@@ -1,0 +1,24 @@
+{
+  "version": "0.0.2",
+  "name": "sdk-test-pwa",
+  "description": "Demonstrates KaiAds usage",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "Vicki Chan",
+    "url": "https://www.kaiads.com/"
+  },
+  "type": "web",
+  "permissions": {},
+  "installs_allowed_from": ["*"],
+  "icons": {
+    "56": "/icon/favicon-57x57.png",
+    "112": "/icon/favicon-114x114.png",
+    "16": "/icon/favicon-16x16.png",
+    "48": "/icon/favicon-48x48.png",
+    "60": "/icon/favicon-60x60.png",
+    "128": "/icon/favicon-120x120.png"
+  },
+  "default_locale": "en-US, zh-TW",
+  "cursor": true,
+  "fullscreen": true
+}

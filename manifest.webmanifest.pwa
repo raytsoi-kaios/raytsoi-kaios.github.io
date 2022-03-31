@@ -1,0 +1,64 @@
+{
+  "version": "0.0.2",
+  "name": "PWA-sdk-test-pwa",
+  "short_name": "test_pwa",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "description": "Demonstrates KaiAds usage in PWA",
+  "lang": "en-US",
+  "background_color": "#27134f",
+  "theme_color": " #6f24b5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/icon/favicon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/icon/favicon-57x57.png",
+      "type": "image/png",
+      "sizes": "56x56"
+    },
+    {
+      "src": "/icon/favicon-60x60.png",
+      "type": "image/png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "/icon/favicon-114x114.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "/icon/favicon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "/icon/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "b2g_features": {
+    "version": "1.0",
+    "developer": {
+      "name": "Vicki Chan",
+      "url": "http://kaiostech.com"
+    },
+    "permissions": {
+      "settings": {
+        "access": "readonly"
+      }
+    },
+    "activities": {},
+    "origin": "app://sdktestpwa.net",
+    "cursor": false
+  }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdk-test-pwa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <!-- <link rel="manifest" href="manifest.webmanifest"> -->
+    <link rel="stylesheet" type="text/css" href="../css/orientation.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+
+    <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icon/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+
+
+    <style>
+        li {
+            font-size: large;
+            line-height: 1.5em;
+        }
+
+        li+li {
+            margin-left: 5px;
+        }
+
+        .navGuide {
+            padding: 1px;
+            font-size: small;
+        }
+
+        .navGuide>p {
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+        }
+
+        button.navGuide {
+            background-color: initial;
+        }
+    </style>
+    <script src="../js/nav.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/new_index.js"></script>
+
+    <script src="http://127.0.0.1/api/v1/shared/core.js"></script>
+    <script src="http://127.0.0.1/api/v1/shared/session.js"></script>
+    <script src="http://127.0.0.1/api/v1/apps/service.js"></script>
+
+</head>
+
+<body>
+    <div class="title">
+        <div class="orientation">
+            <div id=portrait>Portrait</div>
+            <div id=landscape>Landscape</div>
+        </div>
+        <br>
+    </div>
+    <h3>NEW INDEX</h3>
+    <!-- Set sdk version -->
+    <!-- <form onsubmit="return get_action(this)"> -->
+    <div class="pageContent">
+        <button type="button" class="collapsible navGuide items" id="navGuide">Navigation</button>
+        <div class="collContent navGuide">
+            <p>Right Softkey- Leave input box and next;</p>
+            <p>2- Back to TOP;</p>
+            <p>5- UP; 8- DOWN; 4- LEFT; 6- RIGHT;</p>
+            <br>
+        </div>
+        
+        <div id="options-overlay" class="options-overlay" style="display:none;" tabindex="-1"></div>
+
+        <nav class="navbar">
+            <button id="EnvSelect" data-name="Environment" class="selectItem" >Environment</button>     
+            <div id="EnvOptions" style="display:none;" class="kaiads-options-container" tabindex="-1">
+                <div class="options-header">Environment</div>
+                <div class="options-list">
+                    <a tabindex="0" class="option" data-form-category="Env" data-select-value="local">Local</a>
+                    <a tabindex="1" class="option" data-form-category="Env" data-select-value="custom">Custom</a>
+                    <a tabindex="2" class="option" data-form-category="Env" data-select-value="qa">QA</a>
+                    <a tabindex="3" class="option" data-form-category="Env" data-select-value="test">Test</a>
+                    <a tabindex="4" class="option" data-form-category="Env" data-select-value="stage">Stage</a>
+                    <a tabindex="5" class="option" data-form-category="Env" data-select-value="prod">Prod</a>
+                    <a tabindex="6" class="option" data-form-category="Env" data-select-value="addOption">Add...</a>
+                </div>
+                <div class="options-footer">SELECT</div>   
+            </div>
+      
+            <button id="SDKverSelect" data-name="SDK version" class="selectItem" >SDK version</button>  
+            <div id="SDKverOptions" style="display:none;" class="kaiads-options-container" tabindex="-1">
+                <div class="options-header">SDK version</div>
+                <div class="options-list">
+				    <a tabindex="0" class="option" data-form-category="SDKver" data-select-value="v1.3.0">v1.3.0</a>
+					<a tabindex="1" class="option" data-form-category="SDKver" data-select-value="v1.3.1">v1.3.1</a>
+					<a tabindex="2" class="option" data-form-category="SDKver" data-select-value="v1.3.2">v1.3.2</a>
+					<a tabindex="3" class="option" data-form-category="SDKver" data-select-value="v1.3.3">v1.3.3</a>
+					<a tabindex="4" class="option" data-form-category="SDKver" data-select-value="v1.3.4">v1.3.4 = v1.4.0</a>
+					<a tabindex="5" class="option" data-form-category="SDKver" data-select-value="v1.4.1">v1.4.1</a>
+					<a tabindex="6" class="option" data-form-category="SDKver" data-select-value="v1.4.2">v1.4.2</a>
+					<a tabindex="7" class="option" data-form-category="SDKver" data-select-value="v1.4.3">v1.4.3</a>
+					<a tabindex="8" class="option" data-form-category="SDKver" data-select-value="v1.4.4">v1.4.4</a>
+					<a tabindex="9" class="option" data-form-category="SDKver" data-select-value="v1.4.5">v1.4.5</a>
+					<a tabindex="10" class="option" data-form-category="SDKver" data-select-value="v1.5.0" selected>v1.5.0</a>
+					<a tabindex="11" class="option" data-form-category="SDKver" data-select-value="v2.0.0">v2.0.0</a>
+					<a tabindex="12" class="option" data-form-category="SDKver" data-select-value="loader_v3">[APP]Loader-v3</a>
+					<a tabindex="13" class="option" data-form-category="SDKver" data-select-value="loader_v4">[APP]Loader-v4</a>
+					<a tabindex="14" class="option" data-form-category="SDKver" data-select-value="loader_v5">[APP]Loader-v5</a>
+					<a tabindex="15" class="option" data-form-category="SDKver" data-select-value="web_v3">[WEB]Web Integration-v3</a>
+					<a tabindex="16" class="option" data-form-category="SDKver" data-select-value="web_v4">[WEB]Web Integration-v4</a>
+                </div>
+                <div class="options-footer">SELECT</div>   
+            </div>
+
+            <button id="AdTypeSelect" data-name="Page" class="selectItem" >Page</button>
+            <div id="AdTypeOptions" style="display:none;" class="kaiads-options-container" tabindex="-1">
+                <div class="options-header">Page</div>
+                <div class="options-list">
+                    <a tabindex="0" class="option" data-form-category="AdType" data-select-value="testTool" id="testTool">[WebType] Testing Tool</a>
+                    <a tabindex="1" class="option" data-form-category="AdType" data-select-value="responsive" selected="selected">Responsive</a>
+                    <a tabindex="2" class="option" data-form-category="AdType" data-select-value="fullscreen">Fullscreen</a>
+                    <a tabindex="3" class="option" data-form-category="AdType" data-select-value="ui_test">UI_test</a>
+                    <a tabindex="4" class="option" data-form-category="AdType" data-select-value="browser">[Device] Web Browser</a>
+                    <a tabindex="5" class="option" data-form-category="AdType" data-select-value="backgroundReq">Background Req test</a>
+                    <a tabindex="6" class="option" data-form-category="AdType" data-select-value="automation">Automation</a>
+                </div>
+                <div class="options-footer">SELECT</div>   
+            </div>
+        </nav>
+        
+       
+
+		<form id="sdkForm">
+            <div style="display:none;">
+            <select id="Env" name="Env">
+                <option value=""></option>
+            </select>
+            <select id="SDKver" name="SDKver">
+                <option value=""></option>
+            </select>
+            <select id="AdType" name="AdType">
+                <option value=""></option>
+            </select>
+        </div>
+        <button class='items' type="submit" id="setVersion">Submit</button>
+		</form>
+
+
+
+
+    </div>
+</body>
+
+</html>

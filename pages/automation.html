@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sdk-test-pwa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="theme-color" content="#FFFF00">
+    <link rel="stylesheet" type="text/css" href="../css/orientation.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link rel="icon" href="icon/favicon.ico">
+
+    </style>
+    <script src="../js/nav.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/setSDKversion.js"></script>
+
+
+</head>
+
+<body>
+    <div class="title">Fullscreen / Banner
+        <div class="orientation">
+            <div id=portrait>Portrait</div>
+            <div id=landscape>Landscape</div>
+        </div>
+    </div>
+
+    <div id="div1" class="panel"></div>
+    <a href="/index.html">
+        <button class="back items">
+            MENU
+        </button>
+    </a>
+
+
+    <div class="pageContent">
+        <!-- HTMLElement must set inline min/max height and width styles in pixels,
+		style's "display" property will be set to "block" once ad.show() is called
+		display:none is suggested to be present, in case something goes wrong
+     -->
+
+
+        <!-- HTMLElement must set inline min/max height and width styles in pixels,
+		style's " display" property will be set to "block" once ad.show() is called display:none is suggested to be present,
+            in case something goes wrong -->
+        <div id="presetSize">
+            <!-- <span id="hiddenAdStatus" style="display:none;"></span>
+                <button id="clickDisplay">Toggle Display</button>
+                <br><br>
+                <div id='responsive-ad-conteiner'
+                    style="width:220px;height:100px;margin:auto;border: 1px solid dimgray;display:none"></div> -->
+            <p>ad container</p>
+            <p id='x'></p>
+            <p id='y'></p>
+            <div class="items" id='ad-holder2' style="display:none;margin:auto;border: 1px solid dimgray;">
+                <p></p>
+            </div>
+
+            <br></br>
+            <!-- 
+	<div id='ad3' style="max-width:250px;max-height:80px;display:none;margin:auto"></div>	
+
+	<br><br>
+
+	<div id='ad4' style="max-width:250px;max-height:150px;display:none;margin:auto"></div>
+    -->
+        </div>
+        <div>
+        </div>
+</body>
+
+</html>

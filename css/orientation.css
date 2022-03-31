@@ -1,0 +1,37 @@
+@media screen and (orientation: portrait) {
+  #items {
+    width: 100%;
+    /* background-color: aqua; */
+  }
+  li {
+    display: block;
+  }
+
+  #landscape {
+    display: none;
+    visibility: hidden;
+  }
+}
+/* For landscape, we want the tool bar stick on the left */
+
+@media screen and (orientation: landscape) {
+  #items {
+    /*position: fixed;*/
+    /* background-color: burlywood; */
+    height: 100%;
+  }
+
+  li {
+    /*margin-top: .5em;
+        */
+    display: inline;
+  }
+  #portrait {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+span {
+  font-weight: bold;
+}

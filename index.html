@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>sdk-test-pwa</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<!-- <link rel="manifest" href="manifest.webmanifest"> -->
+	<link rel="stylesheet" type="text/css" href="../css/orientation.css">
+	<link rel="stylesheet" type="text/css" href="../css/form.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="icon/favicon.ico">
+	<link rel="manifest" href="/manifest.webmanifest">
+
+
+	<style>
+		li {
+			font-size: large;
+			line-height: 1.5em;
+		}
+
+		li+li {
+			margin-left: 5px;
+		}
+
+		.navGuide {
+			padding: 1px;
+			font-size: small;
+		}
+
+		.navGuide>p {
+			margin-block-start: 0em;
+			margin-block-end: 0em;
+		}
+
+		button.navGuide {
+			background-color: initial;
+		}
+
+		body {
+			height: 100vh;
+			/* overflow-y: hidden; */
+			/* padding-right: 15px; Avoid width reflow */
+		}
+
+
+	</style>
+	<script src="/js/nav.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/index.js"></script>
+
+</head>
+
+<body>
+	<div class="title">
+		<div class="orientation">
+			<div id=portrait>Portrait</div>
+			<div id=landscape>Landscape</div>
+		</div>
+		<br>
+	</div>
+	<h3>Sample SDK usage</h3>
+	<!-- <a href="/pages/new_index.html">NEW_INDEX</a> -->
+	<div id="options-overlay" class="options-overlay" style="display:none" tabindex="-1"></div>
+
+	<!-- Set sdk version -->
+	<!-- <form onsubmit="return get_action(this)"> -->
+	<div class="pageContent">
+		<button type="button" class="collapsible navGuide items" id="navGuide">Navigation</button>
+		<div class="collContent navGuide">
+			<p>Right Softkey- Leave input box and next;</p>
+			<p>2- Back to TOP;</p>
+			<p>5- UP; 8- DOWN; 4- LEFT; 6- RIGHT;</p>
+			<br>
+		</div>
+
+		<div id="textInput" style="display: none;">
+			<ul style="display: block; padding-inline-start: 5px;margin: 2px; width: 100%;">
+				<li style="float: left;;width: 45%;">
+					<button class='items' style="border:1px solid #6f24b5;background-color: white;color: #6f24b5;"
+						id="http">http</button>
+				</li>
+				<li style="float: left;;width: 45%;">
+					<button class='items' style="border:1px solid #6f24b5;background-color: white;color: #6f24b5;"
+						id="https">https</button>
+				</li>
+			</ul>
+			<br>
+			<input class='items' type="text" id="newEndpt" placeholder="Input Endpoint">
+			<button class='items' id="addNewEnv">ADD</button>
+			<br><br>
+		</div>
+
+
+		<form id="sdkForm">
+			<label for=" Envlabel">Choose Env:</label>
+			<button type="button" class="items itemsWrapSelector" id="wrapEnv">
+				<select id="Env" name="Env" class="itemsWrapSelectContainer">
+					<option value="local">127.0.0.1:8000</option>
+					<option value="custom">Custom</option>
+					<option value="qa" selected>QA</option>
+					<option value="test">Test</option>
+					<option value="stage">Stage</option>
+					<option value="prod" id="prod">Prod</option>
+					<option value="add" id="addOption">Add...</option>
+				</select>
+			</button>
+			<br>
+			<label for=" SDKverlabel">Choose SDK version:</label>
+			<button type="button" class="items itemsWrapSelector" id="wrapSDK">
+				<select id="SDKver" name="SDKver" class="itemsWrapSelectContainer">
+					<option value="v1.3.0">v1.3.0</option>
+					<option value="v1.3.1">v1.3.1</option>
+					<option value="v1.3.2">v1.3.2</option>
+					<option value="v1.3.3">v1.3.3</option>
+					<option value="v1.3.4">v1.3.4 = v1.4.0</option>
+					<option value="v1.4.1">v1.4.1</option>
+					<option value="v1.4.2">v1.4.2</option>
+					<option value="v1.4.3">v1.4.3</option>
+					<option value="v1.4.4">v1.4.4</option>
+					<option value="v1.4.5">v1.4.5</option>
+					<option value="v1.5.1">v1.5.1</option>
+					<option value="v1.5.2">v1.5.2</option>
+					<option value="v1.5.3">v1.5.3</option>
+					<option value="v1.5.5">v1.5.5</option>
+					<option value="v1.5.6">v1.5.6</option>
+					<option value="v1.5.7" selected>v1.5.7</option>
+					<option value="v2.0.0">v2.0.0</option>
+					<option value="loader_v3">[APP]Loader-v3</option>
+					<option value="loader_v4">[APP]Loader-v4</option>
+					<option value="loader_v5">[APP]Loader-v5</option>
+					<option value="web_v3">[WEB]Web Integration-v3</option>
+					<option value="web_v4">[WEB]Web Integration-v4</option>
+				</select>
+			</button>
+			<br>
+			<!-- Add page remember to edit in index.js assPage(form) too -->
+			<label for="AdTypelabel">Choose Page:</label>
+			<button type="button" class="items itemsWrapSelector" id="wrapAdType">
+				<select id="AdType" name="AdType" class="itemsWrapSelectContainer">
+					<option value="testTool" id="testTool">[WebType] Testing Tool</option>
+					<option value="responsive" >Responsive</option>
+					<option value="fullscreen" selected="selected">Fullscreen</option>
+					<option value="ui_test">UI_test</option>
+					<option value="browser">[Device] Web Browser</option>
+					<option value="backgroundReq">Background Req test</option>
+					<option value="automation">Automation</option>
+					<!-- <option value="font_test">Font_test</option> -->
+				</select>
+			</button>
+			<br><br>
+			<!-- <input id="setVersion" type="submit" value="Submit"> -->
+			<button class='items' type="submit" id="setVersion">Submit</button>
+		</form>
+
+	</div>
+</body>
+
+</html>
