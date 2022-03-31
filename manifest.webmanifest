@@ -57,11 +57,6 @@
       "name": "kaios",
       "url": "raytsoi-kaios.github.io"
     },
-    "permissions": {
-      "settings": {
-        "access": "readonly"
-      }
-    },
     "activities": {},
     "origin": "app://sdktestpwa.net",
     "cursor": false
